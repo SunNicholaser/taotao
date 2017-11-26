@@ -41,23 +41,27 @@ public class ContentServiceImpl implements ContentService {
         //把json转换成java对象
         TaotaoResult taotaoResult = TaotaoResult.formatToList(json, TbContent.class);
         //取data属性，内容列表
-        List<TbContent> contentList = (List<TbContent>) taotaoResult.getData();
-        //把内容列表转换成AdNode列表
         List<AdNode> resultList = new ArrayList<>();
-        for (TbContent tbContent : contentList) {
-            AdNode node = new AdNode();
-            node.setHeight(240);
-            node.setWidth(670);
-            node.setSrc(tbContent.getPic());
+        if (taotaoResult != null) {
 
-            node.setHeightB(240);
-            node.setWidthB(550);
-            node.setSrcB(tbContent.getPic2());
+            List<TbContent> contentList = (List<TbContent>) taotaoResult.getData();
+            //把内容列表转换成AdNode列表
 
-            node.setAlt(tbContent.getSubTitle());
-            node.setHref(tbContent.getUrl());
+            for (TbContent tbContent : contentList) {
+                AdNode node = new AdNode();
+                node.setHeight(240);
+                node.setWidth(670);
+                node.setSrc(tbContent.getPic());
 
-            resultList.add(node);
+                node.setHeightB(240);
+                node.setWidthB(550);
+                node.setSrcB(tbContent.getPic2());
+
+                node.setAlt(tbContent.getSubTitle());
+                node.setHref(tbContent.getUrl());
+
+                resultList.add(node);
+            }
         }
         //需要把resultList转换成json数据
         String resultJson = JsonUtils.objectToJson(resultList);
