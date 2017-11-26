@@ -12,6 +12,11 @@
         <module name="taotao-manager-service" />
         <module name="taotao-manager-Service" />
         <module name="taotao-manager-web" />
+        <module name="taotao-order" />
+        <module name="taotao-portal" />
+        <module name="taotao-rest" />
+        <module name="taotao-search" />
+        <module name="taotao-sso" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -19,10 +24,15 @@
       <module name="taotao-manager" target="1.7" />
       <module name="taotao-manager-dao" target="1.7" />
       <module name="taotao-manager-pojo" target="1.7" />
-      <module name="taotao-manager-Service" target="1.7" />
       <module name="taotao-manager-service" target="1.7" />
+      <module name="taotao-manager-Service" target="1.7" />
       <module name="taotao-manager-web" target="1.7" />
+      <module name="taotao-order" target="1.7" />
       <module name="taotao-parent" target="1.7" />
+      <module name="taotao-portal" target="1.7" />
+      <module name="taotao-rest" target="1.7" />
+      <module name="taotao-search" target="1.7" />
+      <module name="taotao-sso" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>
